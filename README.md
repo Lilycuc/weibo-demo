@@ -5,7 +5,8 @@
 ## 项目亮点
 - 假登录 → 首页 feed → 发帖 → 点赞/评论闭环
 - 本地 mock 数据渲染，交互逻辑清晰
-- MCP 热搜入口 + Skill 生成文案入口（mock 演示）
+- MCP 能力卡片：热搜 / 情感分析 / 推荐 / 内容审核（mock 演示）
+- Skill 能力卡片：标题生成 / 热点摘要 / 运营文案 / 共情文案（mock 演示）
 - 资源已本地化，适合 GitHub Pages 稳定部署
 
 ## 技术栈
@@ -15,7 +16,7 @@
 
 ## 目录结构
 - `index.html`：项目入口
-- `js/data.js`：mock 数据
+- `js/data.js`：mock 数据（帖子 / MCP / Skill）
 - `js/ui.js`：渲染与安全输出
 - `js/app.js`：状态与交互逻辑
 - `assets/`：本地图片资源

@@ -356,23 +356,56 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .widget-actions {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 8px;
             margin-top: 10px;
+            align-items: center;
         }
         .btn-mini {
-            flex: 1;
-            padding: 6px 10px;
+            padding: 7px 10px;
             border-radius: 10px;
             border: 1px solid #f2f2f5;
             background: #fafafa;
             cursor: pointer;
             font-size: 12px;
+            height: 32px;
+        }
+        .btn-mini.select {
+            background: #fff;
         }
         .btn-mini.primary {
             background: #fa7d3c;
             color: #fff;
             border-color: #fa7d3c;
+        }
+        .skill-box {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            align-items: center;
+        }
+        .skill-result {
+            margin-top: 8px;
+            background: #fafafa;
+            border: 1px dashed #e5e5e5;
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .skill-options {
+            margin-top: 8px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .skill-options input {
+            margin-right: 4px;
         }
         .widget-title {
             font-size: 16px;
@@ -380,6 +413,12 @@
             margin-bottom: 15px;
             border-bottom: 1px solid #f2f2f5;
             padding-bottom: 10px;
+        }
+        .widget-subtitle {
+            font-size: 12px;
+            color: #999;
+            margin-top: -8px;
+            margin-bottom: 10px;
         }
         .hot-list li {
             display: flex;
@@ -510,10 +549,39 @@
                     <li><span class="rank">5</span> 神仙肉 虞书欣</li>
                     <li><span class="rank">6</span> 俄军首次公开宣布使用美国星链</li>
                 </ul>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">MCP 能力</div>
+                <div class="widget-subtitle" id="mcpHint">当前能力：热搜</div>
                 <div class="widget-actions">
-                    <button class="btn-mini primary" onclick="mockMcpHot()">MCP 拉取热搜</button>
-                    <button class="btn-mini" onclick="skillGeneratePost()">Skill 生成文案</button>
+                    <select id="mcpSelect" class="btn-mini select">
+                        <option value="hot">热搜</option>
+                        <option value="sentiment">情感分析</option>
+                        <option value="recommend">推荐</option>
+                        <option value="audit">内容审核</option>
+                    </select>
+                    <button class="btn-mini primary" onclick="mockMcpHot()">MCP 拉取</button>
                 </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">Skill 能力</div>
+                <div class="widget-subtitle">一键生成可复用文案</div>
+                <div class="skill-box">
+                    <select id="skillSelect" class="btn-mini select">
+                        <option value="headline">标题生成</option>
+                        <option value="summary">热点摘要</option>
+                        <option value="marketing">运营文案</option>
+                        <option value="empathy">共情文案</option>
+                    </select>
+                    <button class="btn-mini" onclick="skillGeneratePost()">Skill 生成</button>
+                </div>
+                <div class="skill-options">
+                    <label><input type="checkbox" id="skillWriteInput" checked>写入输入框</label>
+                    <label><input type="checkbox" id="skillAutoPublish">自动发布</label>
+                </div>
+                <div class="skill-result" id="skillResult">生成结果会显示在这里</div>
             </div>
         </div>
 

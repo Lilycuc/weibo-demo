@@ -173,7 +173,14 @@ function handleComment(event, input) {
 
 function mockMcpHot() {
     const hotList = document.getElementById('hotList');
-    hotList.innerHTML = mcpHotData.map((item, idx) => {
+    const select = document.getElementById('mcpSelect');
+    const key = select ? select.value : 'hot';
+    const data = mcpDataSets[key] || mcpDataSets.hot;
+    const hint = document.getElementById('mcpHint');
+    if (hint && select) {
+        hint.innerText = `当前能力：${select.options[select.selectedIndex].text}`;
+    }
+    hotList.innerHTML = data.map((item, idx) => {
         const tag = item.tag ? `<span class="hot-tag" style="${item.tagColor ? `background:${item.tagColor}` : ''}">${item.tag}</span>` : '';
         return `<li><span class="rank">${idx + 1}</span> ${item.title} ${tag}</li>`;
     }).join('');
@@ -181,9 +188,24 @@ function mockMcpHot() {
 
 function skillGeneratePost() {
     const input = document.getElementById('tweetInput');
-    const randomText = skillPostTemplates[Math.floor(Math.random() * skillPostTemplates.length)];
-    input.value = randomText;
-    input.focus();
+    const select = document.getElementById('skillSelect');
+    const writeInput = document.getElementById('skillWriteInput');
+    const autoPublish = document.getElementById('skillAutoPublish');
+    const key = select ? select.value : 'headline';
+    const data = skillDataSets[key] || skillDataSets.headline;
+    const randomText = data[Math.floor(Math.random() * data.length)];
+    const result = document.getElementById('skillResult');
+
+    if (result) {
+        result.innerText = randomText;
+    }
+    if (input && writeInput && writeInput.checked) {
+        input.value = randomText;
+        input.focus();
+    }
+    if (autoPublish && autoPublish.checked) {
+        publishTweet();
+    }
 }
 
 window.onload = function() {
