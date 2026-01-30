@@ -1,6 +1,18 @@
 // Mock data for Weibo Lite
 const postsData = [
     {
+        id: 4,
+        nickname: "莉莉an",
+        avatar: "assets/img/avatar-lilian.jpg",
+        time: "刚刚",
+        content: "很荣幸能参加新华社面试。",
+        images: ["assets/img/wo.jpg"],
+        likes: 0,
+        comments: 0,
+        shares: 0,
+        isVerified: false
+    },
+    {
         id: 1,
         nickname: "科技前沿观察",
         avatar: "assets/img/avatar-felix.svg",
@@ -18,8 +30,8 @@ const postsData = [
     },
     {
         id: 2,
-        nickname: "莉莉an",
-        avatar: "assets/img/avatar-annie.svg",
+        nickname: "中国传媒大学",
+        avatar: "assets/img/cuc.png",
         time: "刚刚",
         content: "校园网公示：2025年研究生国家奖学金拟获奖名单已发布 https://xsc.cuc.edu.cn/2025/1024/c2874a261445/page.htm",
         images: [],
@@ -43,12 +55,12 @@ const postsData = [
 ];
 
 const mcpHotData = [
-    { title: "MCP：全网热搜聚合启动", tag: "热" },
-    { title: "本地部署大模型省钱指南" },
-    { title: "城市打工人午休地图", tag: "新", tagColor: "#ff9400" },
-    { title: "AI 生成短视频模板分享" },
-    { title: "轻量前端项目一周速成" },
-    { title: "毕业设计答辩话术合集" }
+    { title: "女子因幼犬轻咬未处理引发狂犬病", tag: "热" },
+    { title: "缅甸出现一处3000人新诈骗园区" },
+    { title: "中国牌晶体刷新3项世界纪录", tag: "新", tagColor: "#ff9400" },
+    { title: "Turbo5Max今晚19点见" },
+    { title: "神仙肉 虞书欣" },
+    { title: "俄军首次公开宣布使用美国星链" }
 ];
 
 const skillPostTemplates = [

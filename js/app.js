@@ -25,7 +25,7 @@ function fillDemo() {
     fakeLogin();
     const input = document.getElementById('tweetInput');
     if (input) {
-        input.value = '今天做完了 Weibo Lite：能跑、能演示、能截图、能讲故事 ✨';
+        input.value = '今天做完了 Weibo Lite：能登陆、能演示、能发微博、能上传图片、能点赞、能评论、还能评论 ✨';
         publishTweet();
     }
 }
