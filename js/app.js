@@ -189,7 +189,6 @@ function mockMcpHot() {
 function skillGeneratePost() {
     const input = document.getElementById('tweetInput');
     const select = document.getElementById('skillSelect');
-    const writeInput = document.getElementById('skillWriteInput');
     const autoPublish = document.getElementById('skillAutoPublish');
     const key = select ? select.value : 'headline';
     const data = skillDataSets[key] || skillDataSets.headline;
@@ -199,7 +198,7 @@ function skillGeneratePost() {
     if (result) {
         result.innerText = randomText;
     }
-    if (input && writeInput && writeInput.checked) {
+    if (input) {
         input.value = randomText;
         input.focus();
     }
