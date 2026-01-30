@@ -53,3 +53,5 @@ git push -u origin main
 - `静态1.0.html` 为早期静态版本（可选保留，不作为主入口）
 - 目前 MCP/Skill 为 mock 演示，后续可替换为真实接口
 
+## 在线演示
+https://lilycuc.github.io/weibo-demo/
