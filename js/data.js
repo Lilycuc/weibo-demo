@@ -5,7 +5,7 @@ const postsData = [
         nickname: "莉莉an",
         avatar: "assets/img/avatar-lilian.jpg",
         time: "刚刚",
-        content: "很荣幸能参加新华社面试。",
+        content: "谢谢光临～",
         images: ["assets/img/wo.jpg"],
         likes: 0,
         comments: 0,
